@@ -1,5 +1,8 @@
 let nightclubName = 'Tom and Matts Nightclub';
-let members = [
+let nightclubAddress = '420 St.';
+let currentTime = Date.now();
+
+let clubAttendees = [
 	{
 		'Name' : 'Jimmy Napkins',
 		'Age' : 24,
@@ -18,12 +21,38 @@ let members = [
 ];
 
 
-(function () {
+/*
+ * Ensure the new member is over 18
+ * @param age - the age of the new member
+*/
+validateAge = function (age) {
+	if (age < 18) {
+		alert('Yous a Minor');
+		return false;
+	}
+	return true;
+}
 
-    ConsoleMembers = function () {
-        console.error(members);
-    };
+/*
+ * Take input from the HTML, create a newMember object
+ * Add the newMember into our clubAttendees "database"
+*/
+createMember = function () {
+	// let age = document.getElementById("age").value;
+	// let name = document.getElementById("name").value;
+	// let height = document.getElementById("height").value;
 
-    ConsoleMembers();
-
-})();
+	// console.log(document.getElementById("age").value);
+	// console.log(document.getElementById("name").value);
+	// console.log(document.getElementById("height").value);
+	
+	if ( validateAge(document.getElementById("age").value) ) {
+		let newMember = {
+			'Name' : document.getElementById("name").value,
+			'Age' : document.getElementById("age").value,
+			'Height' : document.getElementById("height").value
+		}
+		clubAttendees.push(newMember);
+		console.log(clubAttendees);
+	}
+}
