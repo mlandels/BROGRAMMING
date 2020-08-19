@@ -6,20 +6,35 @@ let clubAttendees = [
 	{
 		'Name' : 'Jimmy Napkins',
 		'Age' : 24,
-		'Height' : '6\'0"'
+		'Height' : '6\'0"',
+		'Vip' : 'yes'
 	},
 	{
 		'Name' : 'Billy Shakes',
 		'Age' : 18,
-		'Height' : '5\'4"'
+		'Height' : '5\'4"',
+		'Vip' : 'no'
 	},
 	{
 		'Name' : 'Ted Coffee',
 		'Age' : 24,
-		'Height' : '5\'11"'
+		'Height' : '5\'11"',
+		'Vip' : 'no'
 	}
 ];
 
+
+let validateVip = function () {
+	members.forEach(function(v) {
+		if (v.Vip === 'yes') {
+			console.log('you get a bottle bruh');
+		} else {
+			console.log('no bottle for you');
+		}
+	})
+}
+
+validateVip();
 
 /*
  * Ensure the new member is over 18
@@ -56,3 +71,4 @@ createMember = function () {
 		console.log(clubAttendees);
 	}
 }
+
